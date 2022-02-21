@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+// import constants which will be an array of objects i think
 
 export default function App() {
+  // state variable to store selected cards
+
+  // function to randomly choose cards which will be stored in state variable
+  // if card was already chosen, choose another card
+
   return (
+    // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      {/* display cards once state variable changes */}
+      <Text>hello world</Text>
       <StatusBar style="auto" />
     </View>
   );
