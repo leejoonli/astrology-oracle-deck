@@ -23,6 +23,8 @@ This application is a simple virtual representation of an astrology oracle deck.
 - React Native
 - Typescript
 
+\*Note: This project could have a backend database to hold all the card information but I feel it is unnecessary and will probably have the data in another file and export it to whatever components I need it in.
+
 ### User Stories
 MVP
 - As a user, I want to be able to tap the deck section so I can randomly choose the cards from the deck.
