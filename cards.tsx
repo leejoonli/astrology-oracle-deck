@@ -171,6 +171,11 @@ let cards = [
         meaning: 'Full Moons are nearly always about climaxes and very often about conclusions; Full Moon Eclipses are the same, but on steroids.  A Full Moon Eclipse can be hard to handle because it portents change, something many of us are comfortable with.  But change is a part of life and this card, no matter when you pull it, reminds you of that fact.  Full Moon Eclipses can also give us a glimpse into what Carl Jung called \'the shadow self\'.  Work with your darkness.'
     },
     {
+        name: 'Waxing Moon',
+        tag: 'The energy is gaining momentum',
+        meaning: 'The Waxing cycle is the period of the lunar cycle from New Moon to Full Moon, and during this time the Moon appears to be slightly bigger and rounder every night.  This is a very empowered and empowering time, and this is a very promising card.  It suggests now is the time to make plans and to act on them, no matter when you actually pull the card.'
+    },
+    {
         name: 'Waning Moon',
         tag: 'What do you need to release',
         meaning: 'At the time of the Waning cycle, take a moment to look up in the skies every night - you will see the Moon growing smaller and smaller as she moves from Full to New again.  It\'s the time to cling on to anyone or anything.  Drawing this card suggests your situation is in its autumn and winter phase, so hunker down and start the regeneration process.'
@@ -191,8 +196,13 @@ let cards = [
         meaning: 'In astrology, there are three quadruplicities: Cardinal, Fixed and Mutable.  The Fixed signs are Taurus, Leo, Scorpio and Aquarius.  The Fixed signs can be stubborn, so anything that\'s just starting as you draw this card may well last longer.  (Remember, we each have all the start signs in our chart - it\'s just the way the astrological wheel works - so there\'s no judgement when we say that while it\'s admirable how much staying-power the Fixed signs have, they can also be obstinate.)'
     },
     {
+        name: 'Mutable Moon',
+        tag: 'Nothing is yet set in stone',
+        meaning: 'In astrology, there are three quadruplicities: Cardinal, Fixed and Mutable.  The Mutable signs are Gemini, Sagittarius, Virgo and Pisces, and when the Moon is in one of these signs, you know there\'s going to be more flexibility in a situation.  Any time you pull this card, it suggests there\'s the opportunity to keep visualizing and affirming what you want, as there\'s still room for change.  So think about what you want, and enjoy the daydream!'
+    },
+    {
         name: 'Supermoon',
-        tag: 'Emotions are runnig high',
+        tag: 'Emotions are running high',
         meaning: 'A supermoon is a New or Full Moon that takes place when the Moon is at its closest point to the Earth during its monthly orbit, an event known as perigee.  If it\'s a Full Moon, the Moon appears around 14 percent bigger at this time.  The Moon is known as the Queen of Emotions, and if you draw the Supermoon card (regardless of when you do this) you can expect your feelings to be more highly charged.'
     },
     {
