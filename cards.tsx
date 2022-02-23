@@ -140,6 +140,26 @@ let cards = [
         tag: 'It\'s time to release negativity',
         meaning: 'The Full Moon in Scorpio has a sting in its tail: it can herald a vindictive end to a relationship.  It can also be a time when we want to be good but we\'re naughty.  If you pull this card, no matter when, your dark side and your \'shadow self\' may be showing.  The Full Moon in Scorpio is also a time of magic.  If you were thinking of making some magic, this is your sign to do it.'
     },
+    {
+        name: 'Full Moon in Sagittarius',
+        tag: 'Look at the bigger picture',
+        meaning: 'The Full Moon in Sagittarius is a time when we are reminded that life is an adventure and there\'s a big wide world to see beyond our backyard.  It\'s about having fun and being prepared to sail into uncharted territory.  It\'s about big ideas versus the details.  No matter when you draw this card, it encourages you to look at the bigger picture.'
+    },
+    {
+        name: 'Full Moon in Capricorn',
+        tag: 'The end of a tough cycle approaches',
+        meaning: 'The Full Moon in Capricorn has a very strong work ethic and energy, and will more than likely come up when you\'re asking a professional question.  If your question is about another matter, it will serve as a much-needed reminder to move through any feelings of hopelessness you may have been feeling about your situation, and this applies no matter when you draw the card.  Making a plan is a far better use of your time.'
+    },
+    {
+        name: 'Full Moon in Aquarius',
+        tag: 'Show the world the real you',
+        meaning: 'Every Full Moon is a time to release and let go, but the addition of Aquarian energy to the mix triples that message.  Aquarius is the opposite of clingly, and pulling this card at any time suggests either you need to let go or someone is thinking they are the ones who need to let go - perhaps of you.  What needs to go?  What is the right thing to do?  Whatever happens next could be highly unconventional or unexpected.'
+    },
+    {
+        name: 'Full Moon in Pisces',
+        tag: 'Balance spirituality and practicality',
+        meaning: 'Pisces is the last sign of the zodiac, so the Full Moon in Pisces symbolically marks endings.  When the Moon is full in Pisces, or whenever you pull this card, it\'s a time to dive deep into your emotions.  Practicality is at odds with the numinous Piscean energies that have no borders, so feel your way now.  Psychic abiliy is heightened when the Full Moon is in Pisces, and soulmates now connect.  It\'s also a time to send out your dreams to the Universe, releasing your fears.'
+    },
 ]
 
 export default cards;
