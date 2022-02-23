@@ -55,6 +55,51 @@ let cards = [
         tag: 'Communication is key',
         meaning: 'Gemini is the sign of communication and socializing, of ideas and travel, and the energy around it and around this card (no matter when you pull it) is speedy, gossipy and flirtatious.  The New moon in Gemini is a wonderful time to get out and socialize - Gemini loves a chat.  One thing to be aware of is that this card can also indicate being mentally \'scattered\'.  Daily meditations will help to unscramble crossed wires in your brain.'
     },
+    {
+        name: 'New Moon in Cancer',
+        tag: 'You and your loved ones are safe',
+        meaning: 'The New Moon in Cancer can be a super-emotional time.  The Moon is all about emotions and Cancer is a water sign and also very emotional!  Saying that, the Moon is very happy in the sign of Cancer - it\'s one of her two home signs, along with Taurus - so whenever you pull it, this card suggests that whatever happens next will be in your favour.  It\'s especially positive for familiy members.'
+    },
+    {
+        name: 'New Moon in Leo',
+        tag: 'Confidence is your key to success',
+        meaning: 'Leo is the sign of the big- and brave-hearted lion, of the pride and showmanship - and flirting.  The energy around the New Moon in Leo (and therefore around this card, whenever you pick it) is hot and generous.  The energy loves itself, and so should you.  If you\'ve been too much of a wallflower, this New Moon card (and the Leo New Moon) comes as a reminder that you need to be proud of who you are.'
+    },
+    {
+        name: 'New Moon in Virgo',
+        tag: 'A time to give rather than take',
+        meaning: 'Virgo is the sign of health, service and analysis - its energy is precise and has a feel of the harvest about it.  When this card comes up, it could be that a wonderful bounty is coming your way.  However, the energy of the New Moon in Virgo is usually about getting your life in order, so that\'s what you need to do at the time of the Virgo New Moon and whenever else you pull this card.'
+    },
+    {
+        name: 'New Moon in Libra',
+        tag: 'A new romantic cycle begins',
+        meaning: 'Libra is the sign of love and harmony, negotiation and relationships; it is harmonious, kind and luxurious, and always aiming for balance.  So when we have the New Moon in Libra, or at any time you draw this card, there\'s a restart possible for anything and everything connected to partnerships, negotiations, appearances and justice.  Remember that Libra is depicted by a set of scales - this energy wants to bring things back to equilibrium.'
+    },
+    {
+        name: 'New Moon in Scorpio',
+        tag: 'Work through your fears',
+        meaning: 'Scorpio is the sign of death and rebirth, magic and shamans - its energy is a little bit dark, occult, even scary.  Not all of us like to face the shadow but Scorpio demands it.  In fact, it\'s through working through your dark side that you can get to the light, and the New Moon in Scorpio (and the appearance of this card at any other time) suggests you need to do that now.'
+    },
+    {
+        name: 'New Moon in Sagittarius',
+        tag: 'Luck is on your side',
+        meaning: 'Sagittarius is the sign of fun, travel, exploration and the Great Cosmic Quest.  It\'s the sign of big ideas - its energy is expansive, upbeat, lucky and Divine.  The New Moon in Sagittarius exudes all this, as does this card whenever you draw it.  Nothing is set in stone with Sagittarius and an optimistic energy could attract all manner of good things if you tap into the energy by expecting the best.'
+    },
+    {
+        name: 'New Moon in Capricorn',
+        tag: 'Your hard work is paying off',
+        meaning: 'Capricorn is the sign of ambition, building and hard work - the energy is solid and rigid.  The New Moon in Capricorn is a powerful lunation that comes towards the end of each year and marks arguably the best moment annually to make a list of your hopes, dreams, ambitions and intentions for the year ahead.  Pulling this card at any time suggests that with planning and discipline you can achieve whatever you set your mind to.'
+    },
+    {
+        name: 'New Moon in Aquarius',
+        tag: 'Bring love into the situation',
+        meaning: 'Aquarius is the sign of invention, modern advances and technology, and humanity.  Its energy is a little brittle - it\'s individual, scientific even, and relatively emotionally detached.  Many people think Aquarius is a water sign because the Aquarius symbol is the Water Bearer, but it\'s actually an air sign and is far more about intellect than the emotional water signs - as is this card, no matter when you draw it.  Dropping convention works will with this energy.'
+    },
+    {
+        name: 'New Moon in Pisces',
+        tag: 'Meditate and contemplate',
+        meaning: 'Pisces is the sign of reveries and mysteries, or depths of emotion, idealism and hopeless romantics.  It is the sign of water and the unconscious - its energy is deep, like watery depths.  The New Moon in Pisces indicates a time to listen to your feelings and to allow your emotions free reign.  Whatever you\'re feeling as you pull this card is more likely than the truth, unless you\'ve been kidding yourself somehow - and only youknow if that\'s the case or not.'
+    },
 ]
 
 export default cards;
