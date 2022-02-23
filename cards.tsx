@@ -100,6 +100,46 @@ let cards = [
         tag: 'Meditate and contemplate',
         meaning: 'Pisces is the sign of reveries and mysteries, or depths of emotion, idealism and hopeless romantics.  It is the sign of water and the unconscious - its energy is deep, like watery depths.  The New Moon in Pisces indicates a time to listen to your feelings and to allow your emotions free reign.  Whatever you\'re feeling as you pull this card is more likely than the truth, unless you\'ve been kidding yourself somehow - and only youknow if that\'s the case or not.'
     },
+    {
+        name: 'Full Moon in Aries',
+        tag: 'A fiery climax approaches',
+        meaning: 'The Full Moon in Aries is a super-fiery time, when emotions can run very high.  On the upside, there\'s excitement about what may lie ahead, but tempers are likely to flare, with rash comments or decisions.  No matter when you pull this card, it signals that the situation has just, or is about to, come to a peak, perhaps in a rather heated way.  There could be a price to pay if you have been too competitive or too blunt.'
+    },
+    {
+        name: 'Full Moon in Taurus',
+        tag: 'Your dreams need a practical plan',
+        meaning: 'The Full Moon in Taurus is a time to get back to earth, to get grounded, to work through any negative feelings you\'ve been dealing with and to find a balance between being passionate and being overly intense.  Money issues may come to a head at the time of the Full Moon in Taurus, but you can take this card as a sign to pay more attention to your cash flow no matter when you draw it.'
+    },
+    {
+        name: 'Full Moon in Gemini',
+        tag: 'The answers you need are coming',
+        meaning: 'Talk, talk and more talk as the emotional Full Moon moves into the communicative sign of Gemini.  It\'s too easy to say too much, so mind how you go if you pull this card.  This card can also indicate an enjoyable social event, since the Full Moon in Gemini is a great time for socializing.  This card also augurs well for any study you\'re either taking or considering.'
+    },
+    {
+        name: 'Full Moon in Cancer',
+        tag: 'A personal issue reaches resolution',
+        meaning: 'The heightened emotions of the Moon-Cancer combination can\'t be ignored.  However, Cncer is one of the Moon\'s two home signs (along with Taurus) so astrologically-speaking the Moon loves to be in this sign - in face she rules Cancer.  This means that with this card there\'s a sense that \'All is as it should be\' or \'Don\'t worry, all will soon be well.\''
+    },
+    {
+        name: 'Full Moon in Leo',
+        tag: 'Don\'t let pride get in your way',
+        meaning: 'When the Full Moon comes into in Leo it can be a wonderfully bright time, where people feel more confident to show the world their talents and assets.  That\'s the upside of this lunation and of this card (no matter when you pull it).  However, take note that the Leo-Full Moon combination creates a sort of tension between your needs and the needs of people in your networks.  Leo-Full Moon is a time to release pride.'
+    },
+    {
+        name: 'Full Moon in Virgo',
+        tag: 'You are good enough',
+        meaning: 'The Full Moon in Virgo is a time to declutter your life, you home and your office.  It\'s a time to sort what\'s good in your life from what\'s not serving you.  It\'s also the time to clear out your energies via salt baths and meditations, and to practise getting more grounded, by walking barefoot.  No matter when you draw this card, it\'s a reminder that any time is a good time to start living a healthier life.'
+    },
+    {
+        name: 'Full Moon in Libra',
+        tag: 'A win-win outcome is forecast',
+        meaning: 'No matter when you pull the Full Moon in libra card, it encourages you to find a balance between your desires and those of the people around you.  Balance is a very Libran energy and the Full Moon brings things to a peak.  Dramas and upsets bring partnerships to the fore.  Libra energy also brings love energy.  Negotiations are easier.'
+    },
+    {
+        name: 'Full Moon in Scorpio',
+        tag: 'It\'s time to release negativity',
+        meaning: 'The Full Moon in Scorpio has a sting in its tail: it can herald a vindictive end to a relationship.  It can also be a time when we want to be good but we\'re naughty.  If you pull this card, no matter when, your dark side and your \'shadow self\' may be showing.  The Full Moon in Scorpio is also a time of magic.  If you were thinking of making some magic, this is your sign to do it.'
+    },
 ]
 
 export default cards;
