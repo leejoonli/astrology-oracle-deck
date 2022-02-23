@@ -160,6 +160,56 @@ let cards = [
         tag: 'Balance spirituality and practicality',
         meaning: 'Pisces is the last sign of the zodiac, so the Full Moon in Pisces symbolically marks endings.  When the Moon is full in Pisces, or whenever you pull this card, it\'s a time to dive deep into your emotions.  Practicality is at odds with the numinous Piscean energies that have no borders, so feel your way now.  Psychic abiliy is heightened when the Full Moon is in Pisces, and soulmates now connect.  It\'s also a time to send out your dreams to the Universe, releasing your fears.'
     },
+    {
+        name: 'New Moon Eclipse',
+        tag: 'Expect powerful change',
+        meaning: 'New Moon Eclipses are among the most exciting astrological events.  They herald a complete change of pace.  It\'s as though you\'re headed in one direction, probably being guided by your ego, and then here comes the Divine - the Goddess, or Spirit - to turn you instead to face the direction you actually need to go.  Regardless of whether or not there\'s a New Moon Eclipse happening when you pull this card, it\'s a powerful affirmation of positive turnarounds.'
+    },
+    {
+        name: 'Full Moon Eclipse',
+        tag: 'Conclusions are within reach',
+        meaning: 'Full Moons are nearly always about climaxes and very often about conclusions; Full Moon Eclipses are the same, but on steroids.  A Full Moon Eclipse can be hard to handle because it portents change, something many of us are comfortable with.  But change is a part of life and this card, no matter when you pull it, reminds you of that fact.  Full Moon Eclipses can also give us a glimpse into what Carl Jung called \'the shadow self\'.  Work with your darkness.'
+    },
+    {
+        name: 'Waning Moon',
+        tag: 'What do you need to release',
+        meaning: 'At the time of the Waning cycle, take a moment to look up in the skies every night - you will see the Moon growing smaller and smaller as she moves from Full to New again.  It\'s the time to cling on to anyone or anything.  Drawing this card suggests your situation is in its autumn and winter phase, so hunker down and start the regeneration process.'
+    },
+    {
+        name: 'Void-of-Course Moon',
+        tag: 'Nothing will come of this situation',
+        meaning: 'The main definition of a Void-of-Course Moon is when the moon won\'t make a major connection with any of the planets until she enters the next sign.  The best thing you can do when you get this card is to chant the Sanskrit words, \'Om Namo Narayani!\', which means, \'I surrender to the Divine\'.  A Void-of-Course Moon is time to just \'be\'.'
+    },
+    {
+        name: 'Cardinal Moon',
+        tag: 'Be bold and make the first move',
+        meaning: 'In astrology, there are three quadruplicities: Cardinal, Fixed and Mutable.  The Cardinal signs are Aries, Cancer, Libra and Capricor (remember, we each have all 12 signs in our chart, for different parts of our lives - it\'s just the way the astrological wheel works).  These are the signs that like to get things started and which are the natural leaders.  No matter when you draw this card, it\'s a sign that something new is starting and you quite possibly need to take the lead on it.'
+    },
+    {
+        name: 'Fixed Moon',
+        tag: 'Hold your vision',
+        meaning: 'In astrology, there are three quadruplicities: Cardinal, Fixed and Mutable.  The Fixed signs are Taurus, Leo, Scorpio and Aquarius.  The Fixed signs can be stubborn, so anything that\'s just starting as you draw this card may well last longer.  (Remember, we each have all the start signs in our chart - it\'s just the way the astrological wheel works - so there\'s no judgement when we say that while it\'s admirable how much staying-power the Fixed signs have, they can also be obstinate.)'
+    },
+    {
+        name: 'Supermoon',
+        tag: 'Emotions are runnig high',
+        meaning: 'A supermoon is a New or Full Moon that takes place when the Moon is at its closest point to the Earth during its monthly orbit, an event known as perigee.  If it\'s a Full Moon, the Moon appears around 14 percent bigger at this time.  The Moon is known as the Queen of Emotions, and if you draw the Supermoon card (regardless of when you do this) you can expect your feelings to be more highly charged.'
+    },
+    {
+        name: 'Blue Moon',
+        tag: 'Bellieve in the impossible',
+        meaning: 'There are usually three Full Moons between each equinox and solstice (and vice versa).  Sometimes, though, we get four Full Moons in a single season.  When that happens, the third of the season\'s four Full Moons is called a Blue Moon - at least, that was the original definition of a Blue Moon.  These days it\'s popular to use the Blue Moon for the second Full Moon in any calendar month that has two Full Moons.  Drawing this card suggests you\'re about to get a rare chance, and that something \'one-off\' could well be about to happen.'
+    },
+    {
+        name: 'South Node',
+        tag: 'Don\'t let your past hold you back',
+        meaning: 'The South Node is where the Moon crosses the ecliptic going south.  On the horoscope chart it shows us what we are likely to become obsessed with, but which will probably do us little or no good.  The South Node is the karmic astrological point that reminds us of the well-known phrase, \'If you always do what you\'ve always done, you\'ll always get what you\'ve always got!\''
+    },
+    {
+        name: 'North Node',
+        tag: 'Step out of your comfort zone',
+        meaning: 'The North Node is where the Moon crosses the ecliptic going north.  It\'s a karmic point and on the horoscope chart shows us what we need to do and where we need to go with our life to find satisfaction, fulfillment and happiness.  The North Node is the karmic astrological point that reminds us - to paraphrase Andre Gide - that in order to discover new oceans, we have to be prepared to lose sight of the shore.'
+    },
 ]
 
 export default cards;
