@@ -35,6 +35,26 @@ let cards = [
         tag: 'Adjustments are required',
         meaning: 'At the time of the Third Quarter Moon, we know where we have been - but where are we going?  The Moon is now a Half Moon and slipping away from us as she catches less and less light, moving towards her full disappearance at New Moon.  It\'s a time of falling away and a time to reevaluate.  No matter when you draw this card, the teaching is to release and to trust.'
     },
+    {
+        name: 'Balsamic Moon',
+        tag: 'A time for healing',
+        meaning: 'Patience is required at the time of the Balsamic Moon.  It\'s a time for self-care as you slowly but surely prepare yourself for the New Moon, which is just around the corner.  No matter which point in the current Moon cycle you have pulled this card, it\'s a reminder to go a little bit easy on yourself.  The time to step into your creatrix power will come soon enough.  Give yourself the time you need.'
+    },
+    {
+        name: 'New Moon in Aries',
+        tag: 'It\'s time to take action',
+        meaning: 'Aries is the first sign of the zodiac, so the New Moon in Aries is the first of the 12 or 13 New Moons of the year.  If you\'re committed to working with all the lunations, then the New Moon in Aries is the right time to start, and drawing this card - no matter when you do it - signifies it\'s also the ideal time to start your Moon work, such as setting intentions.'
+    },
+    {
+        name: 'New Moon in Taurus',
+        tag: 'Prosperity lies ahead',
+        meaning: 'We often feel that it\'s somehow wrong to focus on our finances but the truth is that money can make life far more comfortable from a physical point of view.  Taurus knows this and the New Moon in Taurus is the time to work your magic to create the money you want so you can have the creature comforts you want.  Remember, though, that someone else is still wishing for what you already have.'
+    },
+    {
+        name: 'New Moon in Gemini',
+        tag: 'Communication is key',
+        meaning: 'Gemini is the sign of communication and socializing, of ideas and travel, and the energy around it and around this card (no matter when you pull it) is speedy, gossipy and flirtatious.  The New moon in Gemini is a wonderful time to get out and socialize - Gemini loves a chat.  One thing to be aware of is that this card can also indicate being mentally \'scattered\'.  Daily meditations will help to unscramble crossed wires in your brain.'
+    },
 ]
 
 export default cards;
