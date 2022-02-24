@@ -11,18 +11,20 @@ export default function App() {
   // if card was already chosen, choose another card
 
   const [state, setState] = useState<number | undefined>();
-  const [test, setTest] = useState<Set<number>>();
+  // const [test, setTest] = useState<Set<number>>();
 
+  // random number generator to pick cards
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
   function randomIntFromInterval() {
     setState(Math.floor(Math.random() * (44 - 1 + 1) + 1));
   }
 
+  // shuffle cards array for randomization
   // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   function shuffleArray(array: Array<Object>) {
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let temp = array[i];
+    for (let i: number = array.length - 1; i > 0; i--) {
+      let j: number = Math.floor(Math.random() * (i + 1));
+      let temp: Object = array[i];
       array[i] = array[j];
       array[j] = temp;
     }
@@ -31,7 +33,7 @@ export default function App() {
   useEffect(() => {
     shuffleArray(cards);
     // console.log(cards[0]);
-  }, [state])
+  }, [state]);
 
   return (
     // pressable for card choosing which will call card choosing function
