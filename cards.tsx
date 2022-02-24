@@ -1,5 +1,11 @@
 // array of data
-let cards = [
+interface Card {
+    name: string,
+    tag: string,
+    meaning: string,
+}
+
+let cards: Array<Card> = [
     {
         name: 'New Moon',
         tag: 'A new start is coming',
