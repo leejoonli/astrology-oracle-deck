@@ -5,9 +5,9 @@ import cards from './cards'
 
 export default function App() {
   // console.log(cards[0]);
-  // state variable to store selected cards
+  // state variable to store selected card numbers and cards
   const [select, setSelect] = useState<Array<number>>();
-  // const [test, setTest] = useState<Set<number>>();
+  const [spread, setSpread] = useState();
 
   // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
@@ -35,10 +35,13 @@ export default function App() {
     while (set.size !== 3) {
       set.add(randomIntFromInterval());
     }
+    // convert the Set into an Array to map over it
     let temp: Array<number> = Array.from(set);
     // console.log(temp.length)
     setSelect(temp);
   }
+
+  // function to set spread state
 
   useEffect(() => {
     shuffleArray(cards);
