@@ -4,16 +4,12 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import cards from './cards'
 
 export default function App() {
-  // state variable to store selected cards
   // console.log(cards[0]);
-
-  // function to randomly choose cards which will be stored in state variable
-  // if card was already chosen, choose another card
-
-  const [state, setState] = useState<number | undefined>();
+  // state variable to store selected cards
+  const [select, setSelect] = useState<Set<number>>();
   // const [test, setTest] = useState<Set<number>>();
 
-  // random number generator to pick cards
+  // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
   function randomIntFromInterval(): number {
     // hardcoded values because there's no user input
@@ -21,7 +17,7 @@ export default function App() {
     // setState(Math.floor(Math.random() * (44)));
   }
 
-  // shuffle cards array for randomization
+  // shuffle cards array for more randomization
   // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   function shuffleArray(array: Array<Object>): void {
     for (let i: number = array.length - 1; i > 0; i--) {
@@ -32,18 +28,28 @@ export default function App() {
     }
   }
 
+  // function to randomly choose cards which will be stored in state variable
+  function selectCards(): void {
+    let set: Set<number> = new Set();
+    // if card was already chosen, choose another card
+    while (set.size !== 3) {
+      set.add(randomIntFromInterval());
+    }
+    setSelect(set);
+  }
+
   useEffect(() => {
     shuffleArray(cards);
     // console.log(cards[0]);
-  }, [state]);
+  }, [select]);
 
   return (
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
       {/* display cards once state variable changes */}
-      <Text>{state}</Text>
+      <Text>{select}</Text>
       <StatusBar style="auto" />
-      <Pressable onPress={randomIntFromInterval}><Text>Press me</Text></Pressable>
+      <Pressable onPress={selectCards}><Text>Press me</Text></Pressable>
     </View>
   );
 }
