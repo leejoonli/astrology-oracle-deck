@@ -6,7 +6,7 @@ import cards from './cards'
 export default function App() {
   // console.log(cards[0]);
   // state variable to store selected cards
-  const [select, setSelect] = useState<Set<number>>();
+  const [select, setSelect] = useState<Array<number>>();
   // const [test, setTest] = useState<Set<number>>();
 
   // random number generator
@@ -35,7 +35,9 @@ export default function App() {
     while (set.size !== 3) {
       set.add(randomIntFromInterval());
     }
-    setSelect(set);
+    let temp: Array<number> = Array.from(set);
+    // console.log(temp.length)
+    setSelect(temp);
   }
 
   useEffect(() => {
@@ -47,7 +49,18 @@ export default function App() {
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
       {/* display cards once state variable changes */}
-      <Text>{select}</Text>
+      {select && (
+        <>
+          {select.map((element, index) => {
+            return (
+              <View key={`${cards[element].name}-${index}`}>
+                <Text>{cards[element].name}</Text>
+              </View>
+            )
+          })}
+        </>
+      )}
+      {/* <Text>{select}</Text> */}
       <StatusBar style="auto" />
       <Pressable onPress={selectCards}><Text>Press me</Text></Pressable>
     </View>
