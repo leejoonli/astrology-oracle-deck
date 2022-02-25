@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import cards from './cards'
+import tarot from './DanielleTarot.png';
 
 export default function App() {
   // console.log(cards[0]);
@@ -66,6 +67,9 @@ export default function App() {
       {/* <Text>{select}</Text> */}
       <StatusBar style="auto" />
       <Pressable onPress={selectCards}><Text>Press me</Text></Pressable>
+      <View style={styles.tarot}>
+        <Image style={styles.image} source={tarot} />
+      </View>
     </View>
   );
 }
@@ -77,4 +81,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    width: 114,
+    height: 200,
+  }
 });
