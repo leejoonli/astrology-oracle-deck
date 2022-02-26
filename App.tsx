@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground } from 'react-native';
 import cards from './cards'
 import tarot from './DanielleTarot.png';
 
@@ -56,21 +56,24 @@ export default function App() {
       {/* display cards once state variable changes */}
       {spread && (
         <>
-          {spread.map((element, index) => {
-            return (
-              <View key={`${cards[index].name}-${index}`}>
-                <Text>{cards[index].name}</Text>
-                <Text>{cards[index].tag}</Text>
-                <Text>{cards[index].meaning}</Text>
-              </View>
-            )
-          })}
+          <View style={styles.tarot}>
+            {spread.map((element, index) => {
+              return (
+                <View key={`${cards[index].name}-${index}`}>
+                  <ImageBackground source={tarot} style={styles.image}>
+                    {/* <Text>{cards[index].name}</Text> */}
+                  </ImageBackground>
+                </View>
+              )
+            })}
+          </View>
         </>
       )}
-      {/* <Text>{select}</Text> */}
       <StatusBar style="auto" />
-      <Pressable onPress={selectCards}><Text>Press me</Text></Pressable>
+      <Pressable onPress={selectCards} style={styles.pressable}><Text>Press me</Text></Pressable>
       {/* <View style={styles.tarot}>
+        <Image style={styles.image} source={tarot} />
+        <Image style={styles.image} source={tarot} />
         <Image style={styles.image} source={tarot} />
       </View> */}
     </View>
@@ -84,8 +87,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  tarot: {
+    flexDirection: 'row',
+  },
   image: {
     width: 114,
     height: 200,
+  },
+  pressable: {
+    borderWidth: 1,
+    borderColor: 'red',
   }
 });
