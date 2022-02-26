@@ -5,10 +5,8 @@ import cards from './cards'
 import tarot from './DanielleTarot.png';
 
 export default function App() {
-  // console.log(cards[0]);
-  // state variable to store selected card numbers and cards
-  const [select, setSelect] = useState<Array<number>>();
-  const [spread, setSpread] = useState();
+  // state variable to store selected cards
+  const [spread, setSpread] = useState<Array<Object>>();
 
   // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
@@ -38,27 +36,31 @@ export default function App() {
     }
     // convert the Set into an Array to map over it
     let temp: Array<number> = Array.from(set);
-    // console.log(temp.length)
-    setSelect(temp);
+    // array to store card objects
+    let spread: Array<Object> = [];
+    // push selected cards using the temp array to spread array
+    temp.forEach((element) => {
+      spread.push(cards[element]);
+    });
+    // set state variable to spread array
+    setSpread(spread);
   }
-
-  // function to set spread state
 
   useEffect(() => {
     shuffleArray(cards);
-    // console.log(cards[0]);
-  }, [select]);
+  }, [spread]);
 
   return (
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
       {/* display cards once state variable changes */}
-      {select && (
+      {spread && (
         <>
-          {select.map((element, index) => {
+          {spread.map((element, index) => {
             return (
-              <View key={`${cards[element].name}-${index}`}>
-                <Text>{cards[element].name}</Text>
+              <View key={`${cards[index].name}-${index}`}>
+                <Text>{cards[index].name}</Text>
+                <Text>{cards[index].tag}</Text>
               </View>
             )
           })}
@@ -67,9 +69,9 @@ export default function App() {
       {/* <Text>{select}</Text> */}
       <StatusBar style="auto" />
       <Pressable onPress={selectCards}><Text>Press me</Text></Pressable>
-      <View style={styles.tarot}>
+      {/* <View style={styles.tarot}>
         <Image style={styles.image} source={tarot} />
-      </View>
+      </View> */}
     </View>
   );
 }
