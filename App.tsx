@@ -61,6 +61,7 @@ export default function App() {
               <View key={`${cards[index].name}-${index}`}>
                 <Text>{cards[index].name}</Text>
                 <Text>{cards[index].tag}</Text>
+                <Text>{cards[index].meaning}</Text>
               </View>
             )
           })}
