@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground, Animated } from 'react-native';
 import cards from './cards'
 import tarot from './DanielleTarot.png';
 
 export default function App() {
+  const fadeAnim = useRef(new Animated.Value(0)).current
   // state variable to store selected cards
   const [spread, setSpread] = useState<Array<Object>>();
 
