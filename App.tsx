@@ -8,10 +8,11 @@ export default function App() {
   // https://joshgoestoflatiron.medium.com/a-card-flip-animation-in-react-native-with-hooks-89af1ebd0386
   // post for flip animation using Animated from react native
   const flipAnim = useRef(new Animated.Value(0)).current;
-  let flipRotation = 0;
+  let flipRotation: number = 0;
   flipAnim.addListener(({ value }) => flipRotation = value);
 
   // flip styling
+  // I don't know the typing for this
   const flipToFrontStyle = {
     transform: [
       {
@@ -34,14 +35,14 @@ export default function App() {
   }
 
   // functions to flip card
-  const flipToFront = () => {
+  const flipToFront = (): void => {
     Animated.timing(flipAnim, {
       toValue: 180,
       duration: 300,
       useNativeDriver: true,
     }).start();
   }
-  const flipToBack = () => {
+  const flipToBack = (): void => {
     Animated.timing(flipAnim, {
       toValue: 0,
       duration: 300,
@@ -90,6 +91,7 @@ export default function App() {
     setSpread(spread);
   }
 
+  // useEffect to shuffle "deck" whenever cards are chosen to have more randomization
   useEffect(() => {
     shuffleArray(cards);
   }, [spread]);
@@ -142,16 +144,6 @@ export default function App() {
         )}
       </View>
       <StatusBar style="auto" />
-      {/* <Pressable onPress={selectCards} style={styles.pressable}><Text>Press me</Text></Pressable> */}
-      {/* <Pressable
-        onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
-        <Animated.Image
-          style={{ ...styles.cardFront, ...flipToBackStyle }}
-          source={tarot} />
-        <Animated.Image
-          style={{ ...styles.cardBack, ...flipToFrontStyle }}
-          source={tarot} />
-      </Pressable> */}
     </View>
   );
 }
@@ -162,13 +154,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   fanContainer: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     justifyContent: 'center',
     width: 250,
   },
@@ -180,8 +172,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     width: 400,
   },
   image: {
@@ -189,8 +181,8 @@ const styles = StyleSheet.create({
     height: 200,
   },
   pressable: {
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
