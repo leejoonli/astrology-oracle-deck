@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ImageBackground, Animated } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image } from 'react-native';
 import cards from './cards';
 import tarot from './DanielleTarot.png';
 
@@ -97,34 +97,52 @@ export default function App() {
   return (
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
+      <View style={styles.fanContainer}>
+        <Pressable onPress={selectCards} style={styles.pressable}>
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+          <Image source={tarot} style={styles.image} />
+        </Pressable>
+      </View>
       {/* display cards once state variable changes */}
-      {spread && (
-        <>
-          <View style={styles.tarot}>
-            {spread.map((element, index) => {
-              return (
-                // <View key={`${cards[index].name}-${index}`}>
-                //   <ImageBackground source={tarot} style={styles.image}>
-                //     {/* <Text>{cards[index].name}</Text> */}
-                //   </ImageBackground>
-                // </View>
-                <Pressable
-                  key={`${cards[index].name}-${index}`}
-                  onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
-                  <Animated.Image
-                    style={{ ...styles.cardFront, ...flipToBackStyle }}
-                    source={tarot} />
-                  <Animated.Image
-                    style={{ ...styles.cardBack, ...flipToFrontStyle }}
-                    source={tarot} />
-                </Pressable>
-              )
-            })}
-          </View>
-        </>
-      )}
+      <View style={styles.spreadContainer}>
+        {spread && (
+          <>
+            <View style={styles.tarot}>
+              {spread.map((element, index) => {
+                return (
+                  // <View key={`${cards[index].name}-${index}`}>
+                  //   <ImageBackground source={tarot} style={styles.image}>
+                  //     {/* <Text>{cards[index].name}</Text> */}
+                  //   </ImageBackground>
+                  // </View>
+                  <Pressable
+                    key={`${cards[index].name}-${index}`}
+                    onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
+                    <Animated.Image
+                      style={{ ...styles.cardFront, ...flipToBackStyle }}
+                      source={tarot} />
+                    <Animated.Image
+                      style={{ ...styles.cardBack, ...flipToFrontStyle }}
+                      source={tarot} />
+                  </Pressable>
+                )
+              })}
+            </View>
+          </>
+        )}
+      </View>
       <StatusBar style="auto" />
-      <Pressable onPress={selectCards} style={styles.pressable}><Text>Press me</Text></Pressable>
+      {/* <Pressable onPress={selectCards} style={styles.pressable}><Text>Press me</Text></Pressable> */}
       {/* <Pressable
         onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
         <Animated.Image
@@ -144,10 +162,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  fanContainer: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'red',
+    justifyContent: 'center',
+    width: 250,
+  },
+  spreadContainer: {
+    flex: 1,
   },
   tarot: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
     width: 400,
@@ -159,6 +191,9 @@ const styles = StyleSheet.create({
   pressable: {
     borderWidth: 1,
     borderColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'row',
   },
   cardFront: {
     position: 'absolute',
