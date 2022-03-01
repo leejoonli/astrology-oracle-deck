@@ -5,7 +5,43 @@ import cards from './cards'
 import tarot from './DanielleTarot.png';
 
 export default function App() {
-  const fadeAnim = useRef(new Animated.Value(0)).current
+  const flipAnim = useRef(new Animated.Value(0)).current;
+  let flipRotation = 0;
+  flipAnim.addListener(({ value }) => flipRotation = value);
+  const flipToFrontStyle = {
+    transform: [
+      {
+        rotateY: flipAnim.interpolate({
+          inputRange: [0, 180],
+          outputRange: ['0deg', '180deg']
+        })
+      }
+    ]
+  }
+  const flipToBackStyle = {
+    transform: [
+      {
+        rotateY: flipAnim.interpolate({
+          inputRange: [0, 180],
+          outputRange: ['180deg', '360deg']
+        })
+      }
+    ]
+  }
+  const flipToFront = () => {
+    Animated.timing(flipAnim, {
+      toValue: 180,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }
+  const flipToBack = () => {
+    Animated.timing(flipAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }
   // state variable to store selected cards
   const [spread, setSpread] = useState<Array<Object>>();
 
@@ -77,6 +113,15 @@ export default function App() {
         <Image style={styles.image} source={tarot} />
         <Image style={styles.image} source={tarot} />
       </View> */}
+      <Pressable
+        onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
+        <Animated.Image
+          style={{ ...styles.cardFront, ...flipToBackStyle }}
+          source={tarot} />
+        <Animated.Image
+          style={{ ...styles.cardBack, ...flipToFrontStyle }}
+          source={tarot} />
+      </Pressable>
     </View>
   );
 }
@@ -98,5 +143,15 @@ const styles = StyleSheet.create({
   pressable: {
     borderWidth: 1,
     borderColor: 'red',
+  },
+  cardFront: {
+    position: 'absolute',
+    width: 114,
+    height: 200,
+  },
+  cardBack: {
+    backfaceVisibility: 'hidden',
+    width: 114,
+    height: 200,
   }
 });
