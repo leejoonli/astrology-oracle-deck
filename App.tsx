@@ -1,13 +1,17 @@
 import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated } from 'react-native';
-import cards from './cards'
+import cards from './cards';
 import tarot from './DanielleTarot.png';
 
 export default function App() {
+  // https://joshgoestoflatiron.medium.com/a-card-flip-animation-in-react-native-with-hooks-89af1ebd0386
+  // post for flip animation using Animated from react native
   const flipAnim = useRef(new Animated.Value(0)).current;
   let flipRotation = 0;
   flipAnim.addListener(({ value }) => flipRotation = value);
+
+  // flip styling
   const flipToFrontStyle = {
     transform: [
       {
@@ -28,6 +32,8 @@ export default function App() {
       }
     ]
   }
+
+  // functions to flip card
   const flipToFront = () => {
     Animated.timing(flipAnim, {
       toValue: 180,
@@ -42,6 +48,7 @@ export default function App() {
       useNativeDriver: true,
     }).start();
   }
+
   // state variable to store selected cards
   const [spread, setSpread] = useState<Array<Object>>();
 
@@ -96,11 +103,21 @@ export default function App() {
           <View style={styles.tarot}>
             {spread.map((element, index) => {
               return (
-                <View key={`${cards[index].name}-${index}`}>
-                  <ImageBackground source={tarot} style={styles.image}>
-                    {/* <Text>{cards[index].name}</Text> */}
-                  </ImageBackground>
-                </View>
+                // <View key={`${cards[index].name}-${index}`}>
+                //   <ImageBackground source={tarot} style={styles.image}>
+                //     {/* <Text>{cards[index].name}</Text> */}
+                //   </ImageBackground>
+                // </View>
+                <Pressable
+                  key={`${cards[index].name}-${index}`}
+                  onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
+                  <Animated.Image
+                    style={{ ...styles.cardFront, ...flipToBackStyle }}
+                    source={tarot} />
+                  <Animated.Image
+                    style={{ ...styles.cardBack, ...flipToFrontStyle }}
+                    source={tarot} />
+                </Pressable>
               )
             })}
           </View>
@@ -108,12 +125,7 @@ export default function App() {
       )}
       <StatusBar style="auto" />
       <Pressable onPress={selectCards} style={styles.pressable}><Text>Press me</Text></Pressable>
-      {/* <View style={styles.tarot}>
-        <Image style={styles.image} source={tarot} />
-        <Image style={styles.image} source={tarot} />
-        <Image style={styles.image} source={tarot} />
-      </View> */}
-      <Pressable
+      {/* <Pressable
         onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
         <Animated.Image
           style={{ ...styles.cardFront, ...flipToBackStyle }}
@@ -121,7 +133,7 @@ export default function App() {
         <Animated.Image
           style={{ ...styles.cardBack, ...flipToFrontStyle }}
           source={tarot} />
-      </Pressable>
+      </Pressable> */}
     </View>
   );
 }
@@ -135,6 +147,10 @@ const styles = StyleSheet.create({
   },
   tarot: {
     flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderWidth: 1,
+    borderColor: 'red',
+    width: 400,
   },
   image: {
     width: 114,
