@@ -50,8 +50,14 @@ export default function App() {
     }).start();
   }
 
+  interface Card {
+    name: string,
+    tag: string,
+    meaning: string,
+  }
+
   // state variable to store selected cards
-  const [spread, setSpread] = useState<Array<Object>>();
+  const [spread, setSpread] = useState<Array<Card>>();
   const [modal, setModal] = useState<Boolean>(false);
 
   // random number generator
@@ -83,7 +89,7 @@ export default function App() {
     // convert the Set into an Array to map over it
     let temp: Array<number> = Array.from(set);
     // array to store card objects
-    let spread: Array<Object> = [];
+    let spread: Array<Card> = [];
     // push selected cards using the temp array to spread array
     temp.forEach((element) => {
       spread.push(cards[element]);
@@ -128,11 +134,6 @@ export default function App() {
             <View style={styles.tarot}>
               {spread.map((element, index) => {
                 return (
-                  // <View key={`${cards[index].name}-${index}`}>
-                  //   <ImageBackground source={tarot} style={styles.image}>
-                  //     {/* <Text>{cards[index].name}</Text> */}
-                  //   </ImageBackground>
-                  // </View>
                   <Pressable
                     key={`${cards[index].name}-${index}`}
                     onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
@@ -146,6 +147,7 @@ export default function App() {
                 )
               })}
             </View>
+            {/* {!!flipRotation && (<Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>)} */}
             <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
           </>
         )}
@@ -156,12 +158,23 @@ export default function App() {
             <Modal
               animationType='slide'
               transparent={false}
-              visible={modal}
               onRequestClose={() => {
                 setModal(!modal)
               }}
             >
-              <Text>hello world</Text>
+              {spread && (
+                <>
+                  {spread.map((element, index) => {
+                    return (
+                      <View>
+                        <Text>{element.name}</Text>
+                        <Text>{element.tag}</Text>
+                        <Text>{element.meaning}</Text>
+                      </View>
+                    )
+                  })}
+                </>
+              )}
               <Pressable onPress={() => setModal(!modal)}><Text>Close Modal</Text></Pressable>
             </Modal>
           </View>
