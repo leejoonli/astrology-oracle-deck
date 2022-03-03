@@ -156,7 +156,6 @@ export default function App() {
         <>
           <View>
             <Modal
-              style={styles.modal}
               animationType='slide'
               transparent={false}
               onRequestClose={() => {
@@ -167,16 +166,16 @@ export default function App() {
                 <>
                   {spread.map((element, index) => {
                     return (
-                      <View key={`${element.name}-${index}`}>
-                        <Text>{element.name}</Text>
-                        <Text>{element.tag}</Text>
-                        <Text>{element.meaning}</Text>
+                      <View key={`${element.name}-${index}`} style={styles.modal}>
+                        <Text style={styles.name}>{element.name}</Text>
+                        <Text style={styles.tag}>{element.tag}</Text>
+                        <Text style={styles.meaning}>{element.meaning}</Text>
                       </View>
                     )
                   })}
                 </>
               )}
-              <Pressable onPress={() => setModal(!modal)}><Text>Close Modal</Text></Pressable>
+              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text>Close Modal</Text></Pressable>
             </Modal>
           </View>
         </>
@@ -247,6 +246,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   modal: {
+    padding: 15,
+  },
+  name: {
+    fontSize: 20,
+    marginBottom: 5,
+  },
+  tag: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  meaning: {
+    lineHeight: 17,
+  },
+  closeModal: {
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'red',
     padding: 10,
+    margin: 20,
   }
 });
