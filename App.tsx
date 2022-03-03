@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
 import tarot from './DanielleTarot.png';
 
@@ -52,6 +52,7 @@ export default function App() {
 
   // state variable to store selected cards
   const [spread, setSpread] = useState<Array<Object>>();
+  const [modal, setModal] = useState<Boolean>(false);
 
   // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
@@ -91,7 +92,12 @@ export default function App() {
     setSpread(spread);
   }
 
-  // useEffect to shuffle "deck" whenever cards are chosen to have more randomization
+  // function to display reading
+  function reading(): void {
+    setModal(true);
+  }
+
+  // useEffect to "shuffle deck" whenever cards are chosen to have more randomization
   useEffect(() => {
     shuffleArray(cards);
   }, [spread]);
@@ -140,9 +146,27 @@ export default function App() {
                 )
               })}
             </View>
+            <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
           </>
         )}
       </View>
+      {modal && (
+        <>
+          <View>
+            <Modal
+              animationType='slide'
+              transparent={false}
+              visible={modal}
+              onRequestClose={() => {
+                setModal(!modal)
+              }}
+            >
+              <Text>hello world</Text>
+              <Pressable onPress={() => setModal(!modal)}><Text>Close Modal</Text></Pressable>
+            </Modal>
+          </View>
+        </>
+      )}
       <StatusBar style="auto" />
     </View>
   );
@@ -196,5 +220,15 @@ const styles = StyleSheet.create({
     backfaceVisibility: 'hidden',
     width: 114,
     height: 200,
+  },
+  reading: {
+    borderWidth: 1,
+    borderColor: 'red',
+    alignItems: 'center',
+    padding: 20,
+    margin: 10,
+  },
+  text: {
+    fontSize: 20,
   }
 });
