@@ -156,6 +156,7 @@ export default function App() {
         <>
           <View>
             <Modal
+              style={styles.modal}
               animationType='slide'
               transparent={false}
               onRequestClose={() => {
@@ -166,7 +167,7 @@ export default function App() {
                 <>
                   {spread.map((element, index) => {
                     return (
-                      <View>
+                      <View key={`${element.name}-${index}`}>
                         <Text>{element.name}</Text>
                         <Text>{element.tag}</Text>
                         <Text>{element.meaning}</Text>
@@ -237,11 +238,15 @@ const styles = StyleSheet.create({
   reading: {
     borderWidth: 1,
     borderColor: 'red',
+    borderRadius: 5,
     alignItems: 'center',
     padding: 20,
     margin: 10,
   },
   text: {
     fontSize: 20,
+  },
+  modal: {
+    padding: 10,
   }
 });
