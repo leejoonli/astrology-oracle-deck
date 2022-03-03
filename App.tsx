@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
 import tarot from './DanielleTarot.png';
 
@@ -50,8 +50,15 @@ export default function App() {
     }).start();
   }
 
+  interface Card {
+    name: string,
+    tag: string,
+    meaning: string,
+  }
+
   // state variable to store selected cards
-  const [spread, setSpread] = useState<Array<Object>>();
+  const [spread, setSpread] = useState<Array<Card>>();
+  const [modal, setModal] = useState<Boolean>(false);
 
   // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
@@ -82,7 +89,7 @@ export default function App() {
     // convert the Set into an Array to map over it
     let temp: Array<number> = Array.from(set);
     // array to store card objects
-    let spread: Array<Object> = [];
+    let spread: Array<Card> = [];
     // push selected cards using the temp array to spread array
     temp.forEach((element) => {
       spread.push(cards[element]);
@@ -91,7 +98,12 @@ export default function App() {
     setSpread(spread);
   }
 
-  // useEffect to shuffle "deck" whenever cards are chosen to have more randomization
+  // function to display reading
+  function reading(): void {
+    setModal(true);
+  }
+
+  // useEffect to "shuffle deck" whenever cards are chosen to have more randomization
   useEffect(() => {
     shuffleArray(cards);
   }, [spread]);
@@ -122,11 +134,6 @@ export default function App() {
             <View style={styles.tarot}>
               {spread.map((element, index) => {
                 return (
-                  // <View key={`${cards[index].name}-${index}`}>
-                  //   <ImageBackground source={tarot} style={styles.image}>
-                  //     {/* <Text>{cards[index].name}</Text> */}
-                  //   </ImageBackground>
-                  // </View>
                   <Pressable
                     key={`${cards[index].name}-${index}`}
                     onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
@@ -140,9 +147,39 @@ export default function App() {
                 )
               })}
             </View>
+            {/* {!!flipRotation && (<Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>)} */}
+            <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
           </>
         )}
       </View>
+      {modal && (
+        <>
+          <View>
+            <Modal
+              animationType='slide'
+              transparent={false}
+              onRequestClose={() => {
+                setModal(!modal)
+              }}
+            >
+              {spread && (
+                <>
+                  {spread.map((element, index) => {
+                    return (
+                      <View key={`${element.name}-${index}`} style={styles.modal}>
+                        <Text style={styles.name}>{element.name}</Text>
+                        <Text style={styles.tag}>{element.tag}</Text>
+                        <Text style={styles.meaning}>{element.meaning}</Text>
+                      </View>
+                    )
+                  })}
+                </>
+              )}
+              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text>Close Modal</Text></Pressable>
+            </Modal>
+          </View>
+        </>
+      )}
       <StatusBar style="auto" />
     </View>
   );
@@ -196,5 +233,37 @@ const styles = StyleSheet.create({
     backfaceVisibility: 'hidden',
     width: 114,
     height: 200,
+  },
+  reading: {
+    borderWidth: 1,
+    borderColor: 'red',
+    borderRadius: 5,
+    alignItems: 'center',
+    padding: 20,
+    margin: 10,
+  },
+  text: {
+    fontSize: 20,
+  },
+  modal: {
+    padding: 15,
+  },
+  name: {
+    fontSize: 20,
+    marginBottom: 5,
+  },
+  tag: {
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  meaning: {
+    lineHeight: 17,
+  },
+  closeModal: {
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'red',
+    padding: 10,
+    margin: 20,
   }
 });
