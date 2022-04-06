@@ -4,6 +4,11 @@ import full_moon_aquarius from './img/FullMooninAquarius.jpeg';
 import full_moon_aries from './img/FullMooninAries.jpeg';
 import full_moon_cancer from './img/FullMooninCancer.jpeg';
 import full_moon_capricorn from './img/FullMooninCapricorn.jpeg';
+import full_moon_gemini from './img/FullMooninGemini.jpeg';
+import full_moon_leo from './img/FullMooninLeo.jpeg';
+import full_moon_libra from './img/FullMooninLibra.jpeg';
+import full_moon_pisces from './img/FullMooninPisces.jpeg';
+import full_moon_sagittarius from './img/FullMooninSagittarius.jpeg';
 
 // array of data
 interface Card {
@@ -129,7 +134,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Gemini',
         tag: 'The answers you need are coming',
-        meaning: 'Talk, talk and more talk as the emotional Full Moon moves into the communicative sign of Gemini.  It\'s too easy to say too much, so mind how you go if you pull this card.  This card can also indicate an enjoyable social event, since the Full Moon in Gemini is a great time for socializing.  This card also augurs well for any study you\'re either taking or considering.'
+        meaning: 'Talk, talk and more talk as the emotional Full Moon moves into the communicative sign of Gemini.  It\'s too easy to say too much, so mind how you go if you pull this card.  This card can also indicate an enjoyable social event, since the Full Moon in Gemini is a great time for socializing.  This card also augurs well for any study you\'re either taking or considering.',
+        card_face: full_moon_gemini,
     },
     {
         name: 'Full Moon in Cancer',
@@ -140,7 +146,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Leo',
         tag: 'Don\'t let pride get in your way',
-        meaning: 'When the Full Moon comes into in Leo it can be a wonderfully bright time, where people feel more confident to show the world their talents and assets.  That\'s the upside of this lunation and of this card (no matter when you pull it).  However, take note that the Leo-Full Moon combination creates a sort of tension between your needs and the needs of people in your networks.  Leo-Full Moon is a time to release pride.'
+        meaning: 'When the Full Moon comes into in Leo it can be a wonderfully bright time, where people feel more confident to show the world their talents and assets.  That\'s the upside of this lunation and of this card (no matter when you pull it).  However, take note that the Leo-Full Moon combination creates a sort of tension between your needs and the needs of people in your networks.  Leo-Full Moon is a time to release pride.',
+        card_face: full_moon_leo,
     },
     {
         name: 'Full Moon in Virgo',
@@ -150,7 +157,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Libra',
         tag: 'A win-win outcome is forecast',
-        meaning: 'No matter when you pull the Full Moon in libra card, it encourages you to find a balance between your desires and those of the people around you.  Balance is a very Libran energy and the Full Moon brings things to a peak.  Dramas and upsets bring partnerships to the fore.  Libra energy also brings love energy.  Negotiations are easier.'
+        meaning: 'No matter when you pull the Full Moon in libra card, it encourages you to find a balance between your desires and those of the people around you.  Balance is a very Libran energy and the Full Moon brings things to a peak.  Dramas and upsets bring partnerships to the fore.  Libra energy also brings love energy.  Negotiations are easier.',
+        card_face: full_moon_libra,
     },
     {
         name: 'Full Moon in Scorpio',
@@ -160,7 +168,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Sagittarius',
         tag: 'Look at the bigger picture',
-        meaning: 'The Full Moon in Sagittarius is a time when we are reminded that life is an adventure and there\'s a big wide world to see beyond our backyard.  It\'s about having fun and being prepared to sail into uncharted territory.  It\'s about big ideas versus the details.  No matter when you draw this card, it encourages you to look at the bigger picture.'
+        meaning: 'The Full Moon in Sagittarius is a time when we are reminded that life is an adventure and there\'s a big wide world to see beyond our backyard.  It\'s about having fun and being prepared to sail into uncharted territory.  It\'s about big ideas versus the details.  No matter when you draw this card, it encourages you to look at the bigger picture.',
+        card_face: full_moon_sagittarius,
     },
     {
         name: 'Full Moon in Capricorn',
@@ -177,7 +186,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Pisces',
         tag: 'Balance spirituality and practicality',
-        meaning: 'Pisces is the last sign of the zodiac, so the Full Moon in Pisces symbolically marks endings.  When the Moon is full in Pisces, or whenever you pull this card, it\'s a time to dive deep into your emotions.  Practicality is at odds with the numinous Piscean energies that have no borders, so feel your way now.  Psychic abiliy is heightened when the Full Moon is in Pisces, and soulmates now connect.  It\'s also a time to send out your dreams to the Universe, releasing your fears.'
+        meaning: 'Pisces is the last sign of the zodiac, so the Full Moon in Pisces symbolically marks endings.  When the Moon is full in Pisces, or whenever you pull this card, it\'s a time to dive deep into your emotions.  Practicality is at odds with the numinous Piscean energies that have no borders, so feel your way now.  Psychic abiliy is heightened when the Full Moon is in Pisces, and soulmates now connect.  It\'s also a time to send out your dreams to the Universe, releasing your fears.',
+        card_face: full_moon_pisces,
     },
     {
         name: 'New Moon Eclipse',
