@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
-import tarot from './DanielleTarot.png';
+import tarot from './img/DanielleTarot.png';
+import test from './img/test.jpeg';
 
 export default function App() {
   // https://joshgoestoflatiron.medium.com/a-card-flip-animation-in-react-native-with-hooks-89af1ebd0386
@@ -124,7 +125,7 @@ export default function App() {
           <Image source={tarot} style={styles.image} />
           <Image source={tarot} style={styles.image} />
           <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
+          <Image source={test} style={styles.image} />
         </Pressable>
       </View>
       {/* display cards once state variable changes */}
