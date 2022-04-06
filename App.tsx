@@ -55,6 +55,7 @@ export default function App() {
     name: string,
     tag: string,
     meaning: string,
+    card_face: any,
   }
 
   // state variable to store selected cards
@@ -134,16 +135,17 @@ export default function App() {
           <>
             <View style={styles.tarot}>
               {spread.map((element, index) => {
+                // rename the source to element.card_face when all seed data have card_face property
                 return (
                   <Pressable
                     key={`${cards[index].name}-${index}`}
                     onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
                     <Animated.Image
                       style={{ ...styles.cardFront, ...flipToBackStyle }}
-                      source={tarot} />
+                      source={test} />
                     <Animated.Image
                       style={{ ...styles.cardBack, ...flipToFrontStyle }}
-                      source={tarot} />
+                      source={test} />
                   </Pressable>
                 )
               })}
