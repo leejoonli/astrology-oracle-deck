@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
-import tarot from './DanielleTarot.png';
+import tarot from './img/DanielleTarot.png';
+import test from './img/test.jpeg';
 
 export default function App() {
   // https://joshgoestoflatiron.medium.com/a-card-flip-animation-in-react-native-with-hooks-89af1ebd0386
@@ -54,6 +55,7 @@ export default function App() {
     name: string,
     tag: string,
     meaning: string,
+    card_face: any,
   }
 
   // state variable to store selected cards
@@ -124,7 +126,7 @@ export default function App() {
           <Image source={tarot} style={styles.image} />
           <Image source={tarot} style={styles.image} />
           <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
+          <Image source={test} style={styles.image} />
         </Pressable>
       </View>
       {/* display cards once state variable changes */}
@@ -133,16 +135,17 @@ export default function App() {
           <>
             <View style={styles.tarot}>
               {spread.map((element, index) => {
+                // rename the source to element.card_face when all seed data have card_face property
                 return (
                   <Pressable
                     key={`${cards[index].name}-${index}`}
                     onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
                     <Animated.Image
                       style={{ ...styles.cardFront, ...flipToBackStyle }}
-                      source={tarot} />
+                      source={test} />
                     <Animated.Image
                       style={{ ...styles.cardBack, ...flipToFrontStyle }}
-                      source={tarot} />
+                      source={test} />
                   </Pressable>
                 )
               })}
