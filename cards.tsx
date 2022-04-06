@@ -9,6 +9,9 @@ import full_moon_leo from './img/FullMooninLeo.jpeg';
 import full_moon_libra from './img/FullMooninLibra.jpeg';
 import full_moon_pisces from './img/FullMooninPisces.jpeg';
 import full_moon_sagittarius from './img/FullMooninSagittarius.jpeg';
+import full_moon_scorpio from './img/FullMooninScorpio.jpeg';
+import full_moon_taurus from './img/FullMooninTaurus.jpeg';
+import full_moon_virgo from './img/FullMooninVirgo.jpeg';
 
 // array of data
 interface Card {
@@ -129,7 +132,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Taurus',
         tag: 'Your dreams need a practical plan',
-        meaning: 'The Full Moon in Taurus is a time to get back to earth, to get grounded, to work through any negative feelings you\'ve been dealing with and to find a balance between being passionate and being overly intense.  Money issues may come to a head at the time of the Full Moon in Taurus, but you can take this card as a sign to pay more attention to your cash flow no matter when you draw it.'
+        meaning: 'The Full Moon in Taurus is a time to get back to earth, to get grounded, to work through any negative feelings you\'ve been dealing with and to find a balance between being passionate and being overly intense.  Money issues may come to a head at the time of the Full Moon in Taurus, but you can take this card as a sign to pay more attention to your cash flow no matter when you draw it.',
+        card_face: full_moon_taurus,
     },
     {
         name: 'Full Moon in Gemini',
@@ -152,7 +156,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Virgo',
         tag: 'You are good enough',
-        meaning: 'The Full Moon in Virgo is a time to declutter your life, you home and your office.  It\'s a time to sort what\'s good in your life from what\'s not serving you.  It\'s also the time to clear out your energies via salt baths and meditations, and to practise getting more grounded, by walking barefoot.  No matter when you draw this card, it\'s a reminder that any time is a good time to start living a healthier life.'
+        meaning: 'The Full Moon in Virgo is a time to declutter your life, you home and your office.  It\'s a time to sort what\'s good in your life from what\'s not serving you.  It\'s also the time to clear out your energies via salt baths and meditations, and to practise getting more grounded, by walking barefoot.  No matter when you draw this card, it\'s a reminder that any time is a good time to start living a healthier life.',
+        card_face: full_moon_virgo,
     },
     {
         name: 'Full Moon in Libra',
@@ -163,7 +168,8 @@ let cards: Array<Card> = [
     {
         name: 'Full Moon in Scorpio',
         tag: 'It\'s time to release negativity',
-        meaning: 'The Full Moon in Scorpio has a sting in its tail: it can herald a vindictive end to a relationship.  It can also be a time when we want to be good but we\'re naughty.  If you pull this card, no matter when, your dark side and your \'shadow self\' may be showing.  The Full Moon in Scorpio is also a time of magic.  If you were thinking of making some magic, this is your sign to do it.'
+        meaning: 'The Full Moon in Scorpio has a sting in its tail: it can herald a vindictive end to a relationship.  It can also be a time when we want to be good but we\'re naughty.  If you pull this card, no matter when, your dark side and your \'shadow self\' may be showing.  The Full Moon in Scorpio is also a time of magic.  If you were thinking of making some magic, this is your sign to do it.',
+        card_face: full_moon_scorpio,
     },
     {
         name: 'Full Moon in Sagittarius',
