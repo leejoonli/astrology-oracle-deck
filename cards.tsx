@@ -21,6 +21,11 @@ import new_moon_leo from './img/NewMooninLeo.jpeg';
 import new_moon_libra from './img/NewMooninLibra.jpeg';
 import new_moon_pisces from './img/NewMooninPisces.jpeg';
 import new_moon_sagittarius from './img/NewMooninSagittarius.jpeg';
+import new_moon_scorpio from './img/NewMooninScorpio.jpeg';
+import new_moon_taurus from './img/NewMooninTaurus.jpeg';
+import new_moon_virgo from './img/NewMooninVirgo.jpeg';
+import north_node from './img/NorthNode.jpeg';
+import south_node from './img/SouthNode.jpeg';
 
 // array of data
 interface Card {
@@ -81,7 +86,8 @@ let cards: Array<Card> = [
     {
         name: 'New Moon in Taurus',
         tag: 'Prosperity lies ahead',
-        meaning: 'We often feel that it\'s somehow wrong to focus on our finances but the truth is that money can make life far more comfortable from a physical point of view.  Taurus knows this and the New Moon in Taurus is the time to work your magic to create the money you want so you can have the creature comforts you want.  Remember, though, that someone else is still wishing for what you already have.'
+        meaning: 'We often feel that it\'s somehow wrong to focus on our finances but the truth is that money can make life far more comfortable from a physical point of view.  Taurus knows this and the New Moon in Taurus is the time to work your magic to create the money you want so you can have the creature comforts you want.  Remember, though, that someone else is still wishing for what you already have.',
+        card_face: new_moon_taurus,
     },
     {
         name: 'New Moon in Gemini',
@@ -104,7 +110,8 @@ let cards: Array<Card> = [
     {
         name: 'New Moon in Virgo',
         tag: 'A time to give rather than take',
-        meaning: 'Virgo is the sign of health, service and analysis - its energy is precise and has a feel of the harvest about it.  When this card comes up, it could be that a wonderful bounty is coming your way.  However, the energy of the New Moon in Virgo is usually about getting your life in order, so that\'s what you need to do at the time of the Virgo New Moon and whenever else you pull this card.'
+        meaning: 'Virgo is the sign of health, service and analysis - its energy is precise and has a feel of the harvest about it.  When this card comes up, it could be that a wonderful bounty is coming your way.  However, the energy of the New Moon in Virgo is usually about getting your life in order, so that\'s what you need to do at the time of the Virgo New Moon and whenever else you pull this card.',
+        card_face: new_moon_virgo,
     },
     {
         name: 'New Moon in Libra',
@@ -115,7 +122,8 @@ let cards: Array<Card> = [
     {
         name: 'New Moon in Scorpio',
         tag: 'Work through your fears',
-        meaning: 'Scorpio is the sign of death and rebirth, magic and shamans - its energy is a little bit dark, occult, even scary.  Not all of us like to face the shadow but Scorpio demands it.  In fact, it\'s through working through your dark side that you can get to the light, and the New Moon in Scorpio (and the appearance of this card at any other time) suggests you need to do that now.'
+        meaning: 'Scorpio is the sign of death and rebirth, magic and shamans - its energy is a little bit dark, occult, even scary.  Not all of us like to face the shadow but Scorpio demands it.  In fact, it\'s through working through your dark side that you can get to the light, and the New Moon in Scorpio (and the appearance of this card at any other time) suggests you need to do that now.',
+        card_face: new_moon_scorpio,
     },
     {
         name: 'New Moon in Sagittarius',
@@ -267,12 +275,14 @@ let cards: Array<Card> = [
     {
         name: 'South Node',
         tag: 'Don\'t let your past hold you back',
-        meaning: 'The South Node is where the Moon crosses the ecliptic going south.  On the horoscope chart it shows us what we are likely to become obsessed with, but which will probably do us little or no good.  The South Node is the karmic astrological point that reminds us of the well-known phrase, \'If you always do what you\'ve always done, you\'ll always get what you\'ve always got!\''
+        meaning: 'The South Node is where the Moon crosses the ecliptic going south.  On the horoscope chart it shows us what we are likely to become obsessed with, but which will probably do us little or no good.  The South Node is the karmic astrological point that reminds us of the well-known phrase, \'If you always do what you\'ve always done, you\'ll always get what you\'ve always got!\'',
+        card_face: south_node,
     },
     {
         name: 'North Node',
         tag: 'Step out of your comfort zone',
-        meaning: 'The North Node is where the Moon crosses the ecliptic going north.  It\'s a karmic point and on the horoscope chart shows us what we need to do and where we need to go with our life to find satisfaction, fulfillment and happiness.  The North Node is the karmic astrological point that reminds us - to paraphrase Andre Gide - that in order to discover new oceans, we have to be prepared to lose sight of the shore.'
+        meaning: 'The North Node is where the Moon crosses the ecliptic going north.  It\'s a karmic point and on the horoscope chart shows us what we need to do and where we need to go with our life to find satisfaction, fulfillment and happiness.  The North Node is the karmic astrological point that reminds us - to paraphrase Andre Gide - that in order to discover new oceans, we have to be prepared to lose sight of the shore.',
+        card_face: north_node,
     },
 ]
 
