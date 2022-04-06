@@ -26,6 +26,8 @@ import new_moon_taurus from './img/NewMooninTaurus.jpeg';
 import new_moon_virgo from './img/NewMooninVirgo.jpeg';
 import north_node from './img/NorthNode.jpeg';
 import south_node from './img/SouthNode.jpeg';
+import super_moon from './img/SuperMoon.jpeg';
+import void_moon from './img/Void-ofCourseMoon.jpeg';
 
 // array of data
 interface Card {
@@ -244,7 +246,8 @@ let cards: Array<Card> = [
     {
         name: 'Void-of-Course Moon',
         tag: 'Nothing will come of this situation',
-        meaning: 'The main definition of a Void-of-Course Moon is when the moon won\'t make a major connection with any of the planets until she enters the next sign.  The best thing you can do when you get this card is to chant the Sanskrit words, \'Om Namo Narayani!\', which means, \'I surrender to the Divine\'.  A Void-of-Course Moon is time to just \'be\'.'
+        meaning: 'The main definition of a Void-of-Course Moon is when the moon won\'t make a major connection with any of the planets until she enters the next sign.  The best thing you can do when you get this card is to chant the Sanskrit words, \'Om Namo Narayani!\', which means, \'I surrender to the Divine\'.  A Void-of-Course Moon is time to just \'be\'.',
+        card_face: void_moon,
     },
     {
         name: 'Cardinal Moon',
@@ -264,7 +267,8 @@ let cards: Array<Card> = [
     {
         name: 'Supermoon',
         tag: 'Emotions are running high',
-        meaning: 'A supermoon is a New or Full Moon that takes place when the Moon is at its closest point to the Earth during its monthly orbit, an event known as perigee.  If it\'s a Full Moon, the Moon appears around 14 percent bigger at this time.  The Moon is known as the Queen of Emotions, and if you draw the Supermoon card (regardless of when you do this) you can expect your feelings to be more highly charged.'
+        meaning: 'A supermoon is a New or Full Moon that takes place when the Moon is at its closest point to the Earth during its monthly orbit, an event known as perigee.  If it\'s a Full Moon, the Moon appears around 14 percent bigger at this time.  The Moon is known as the Queen of Emotions, and if you draw the Supermoon card (regardless of when you do this) you can expect your feelings to be more highly charged.',
+        card_face: super_moon,
     },
     {
         name: 'Blue Moon',
