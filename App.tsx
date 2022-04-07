@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
-import tarot from './img/DanielleTarot.png';
 import test from './img/test.jpeg';
 
 export default function App() {
@@ -70,17 +69,17 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.fanContainer}>
         <Pressable onPress={selectCards} style={styles.pressable}>
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
-          <Image source={tarot} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
+          <Image source={test} style={styles.image} />
           <Image source={test} style={styles.image} />
         </Pressable>
       </View>
