@@ -6,51 +6,6 @@ import tarot from './img/DanielleTarot.png';
 import test from './img/test.jpeg';
 
 export default function App() {
-  // https://joshgoestoflatiron.medium.com/a-card-flip-animation-in-react-native-with-hooks-89af1ebd0386
-  // post for flip animation using Animated from react native
-  const flipAnim = useRef(new Animated.Value(0)).current;
-  let flipRotation: number = 0;
-  flipAnim.addListener(({ value }) => flipRotation = value);
-
-  // flip styling
-  // I don't know the typing for this
-  const flipToFrontStyle = {
-    transform: [
-      {
-        rotateY: flipAnim.interpolate({
-          inputRange: [0, 180],
-          outputRange: ['0deg', '180deg']
-        })
-      }
-    ]
-  }
-  const flipToBackStyle = {
-    transform: [
-      {
-        rotateY: flipAnim.interpolate({
-          inputRange: [0, 180],
-          outputRange: ['180deg', '360deg']
-        })
-      }
-    ]
-  }
-
-  // functions to flip card
-  const flipToFront = (): void => {
-    Animated.timing(flipAnim, {
-      toValue: 180,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-  }
-  const flipToBack = (): void => {
-    Animated.timing(flipAnim, {
-      toValue: 0,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-  }
-
   interface Card {
     name: string,
     tag: string,
@@ -139,18 +94,11 @@ export default function App() {
                 return (
                   <Pressable
                     key={`${cards[index].name}-${index}`}
-                    onPress={() => !!flipRotation ? flipToBack() : flipToFront()}>
-                    <Animated.Image
-                      style={{ ...styles.cardFront, ...flipToBackStyle }}
-                      source={test} />
-                    <Animated.Image
-                      style={{ ...styles.cardBack, ...flipToFrontStyle }}
-                      source={test} />
+                    onPress={() => { console.log('hello') }}>
                   </Pressable>
                 )
               })}
             </View>
-            {/* {!!flipRotation && (<Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>)} */}
             <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
           </>
         )}
@@ -226,16 +174,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
-  },
-  cardFront: {
-    position: 'absolute',
-    width: 114,
-    height: 200,
-  },
-  cardBack: {
-    backfaceVisibility: 'hidden',
-    width: 114,
-    height: 200,
   },
   reading: {
     borderWidth: 1,
