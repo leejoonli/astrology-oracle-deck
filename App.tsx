@@ -95,6 +95,7 @@ export default function App() {
                     key={`${cards[index].name}-${index}`}
                     // change this to show modal
                     onPress={() => { console.log('hello') }}>
+                    <Image source={element.card_face} style={styles.image} />
                   </Pressable>
                 )
               })}

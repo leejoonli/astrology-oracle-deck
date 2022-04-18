@@ -27,7 +27,7 @@ import new_moon_virgo from './img/NewMooninVirgo.jpeg';
 import north_node from './img/NorthNode.jpeg';
 import south_node from './img/SouthNode.jpeg';
 import super_moon from './img/SuperMoon.jpeg';
-import void_moon from './img/Void-ofCourseMoon.jpeg';
+import void_moon from './img/Void-Of-CourseMoon.jpeg';
 import new_moon from './img/NewMoon.jpeg';
 import waxing_crescent_moon from './img/WaxingCrescentMoon.jpeg';
 import first_quarter_moon from './img/FirstQuarterMoon.jpeg';
