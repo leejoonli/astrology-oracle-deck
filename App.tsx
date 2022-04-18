@@ -2,9 +2,15 @@ import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
-import test from './img/test.jpeg';
+// got the card back from this link
+// https://www.freepik.com/free-vector/hand-drawn-mystical-tarot-mobile-wallpaper_21862422.htm#query=tarot%20cards&position=5&from_view=keyword
+import card_back from './img/cardback.jpg';
+// got the app background from this link
+// https://www.pinterest.com/pin/dump-of-images-that-could-be-used-as-phone-wallpapers-36--775463629566722000/
+import starry_background from './img/starrybackground.jpg';
 
 export default function App() {
+  // interface for typings
   interface Card {
     name: string,
     tag: string,
@@ -14,14 +20,15 @@ export default function App() {
 
   // state variable to store selected cards
   const [spread, setSpread] = useState<Array<Card>>();
+  // state variable to track single card to display
+  const [single, setSingle] = useState<Card>();
+  // state variable to track modal open and close
   const [modal, setModal] = useState<Boolean>(false);
 
   // random number generator
   // https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
   function randomIntFromInterval(): number {
-    // hardcoded values because there's no user input
     return Math.floor(Math.random() * (44));
-    // setState(Math.floor(Math.random() * (44)));
   }
 
   // shuffle cards array for more randomization
@@ -54,7 +61,7 @@ export default function App() {
     setSpread(spread);
   }
 
-  // function to display reading
+  // function to display card meaning
   function reading(): void {
     setModal(true);
   }
@@ -67,20 +74,21 @@ export default function App() {
   return (
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
+      <Image source={starry_background} resizeMode="cover" style={styles.containerBackground} />
       <View style={styles.fanContainer}>
         <Pressable onPress={selectCards} style={styles.pressable}>
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
         </Pressable>
       </View>
       {/* display cards once state variable changes */}
@@ -89,16 +97,18 @@ export default function App() {
           <>
             <View style={styles.tarot}>
               {spread.map((element, index) => {
-                // rename the source to element.card_face when all seed data have card_face property
                 return (
                   <Pressable
                     key={`${cards[index].name}-${index}`}
-                    onPress={() => { console.log('hello') }}>
+                    onPress={() => {
+                      setSingle(element);
+                      reading();
+                    }}>
+                    <Image source={element.card_face} style={styles.image} />
                   </Pressable>
-                )
+                );
               })}
             </View>
-            <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
           </>
         )}
       </View>
@@ -113,17 +123,12 @@ export default function App() {
               }}
             >
               {spread && (
-                <>
-                  {spread.map((element, index) => {
-                    return (
-                      <View key={`${element.name}-${index}`} style={styles.modal}>
-                        <Text style={styles.name}>{element.name}</Text>
-                        <Text style={styles.tag}>{element.tag}</Text>
-                        <Text style={styles.meaning}>{element.meaning}</Text>
-                      </View>
-                    )
-                  })}
-                </>
+                <View style={styles.modal}>
+                  <Image source={single?.card_face} style={styles.image} />
+                  <Text>{single?.name}</Text>
+                  <Text>{single?.tag}</Text>
+                  <Text>{single?.meaning}</Text>
+                </View>
               )}
               <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text>Close Modal</Text></Pressable>
             </Modal>
@@ -143,6 +148,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // borderWidth: 1,
     // borderColor: 'red',
+  },
+  containerBackground: {
+    zIndex: -1,
+    position: 'absolute',
+    opacity: .9,
   },
   fanContainer: {
     flex: 1,
@@ -173,14 +183,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
-  },
-  reading: {
-    borderWidth: 1,
-    borderColor: 'red',
-    borderRadius: 5,
-    alignItems: 'center',
-    padding: 20,
-    margin: 10,
   },
   text: {
     fontSize: 20,
