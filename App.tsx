@@ -2,7 +2,9 @@ import { useEffect, useState, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable, ImageBackground, Animated, Image, Modal } from 'react-native';
 import cards from './cards';
-import test from './img/test.jpeg';
+// got the card back from this link
+// https://www.freepik.com/free-vector/hand-drawn-mystical-tarot-mobile-wallpaper_21862422.htm#query=tarot%20cards&position=5&from_view=keyword
+import card_back from './img/cardback.jpg';
 
 export default function App() {
   interface Card {
@@ -69,18 +71,18 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.fanContainer}>
         <Pressable onPress={selectCards} style={styles.pressable}>
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
-          <Image source={test} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
+          <Image source={card_back} style={styles.image} />
         </Pressable>
       </View>
       {/* display cards once state variable changes */}
@@ -94,10 +96,10 @@ export default function App() {
                   <Pressable
                     key={`${cards[index].name}-${index}`}
                     // change this to show modal
-                    onPress={() => { console.log('hello') }}>
+                    onPress={() => { console.log(element) }}>
                     <Image source={element.card_face} style={styles.image} />
                   </Pressable>
-                )
+                );
               })}
             </View>
             <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
@@ -123,7 +125,7 @@ export default function App() {
                         <Text style={styles.tag}>{element.tag}</Text>
                         <Text style={styles.meaning}>{element.meaning}</Text>
                       </View>
-                    )
+                    );
                   })}
                 </>
               )}
