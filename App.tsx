@@ -5,6 +5,7 @@ import cards from './cards';
 // got the card back from this link
 // https://www.freepik.com/free-vector/hand-drawn-mystical-tarot-mobile-wallpaper_21862422.htm#query=tarot%20cards&position=5&from_view=keyword
 import card_back from './img/cardback.jpg';
+import starry_background from './img/starrybackground.jpg';
 
 export default function App() {
   interface Card {
@@ -69,6 +70,7 @@ export default function App() {
   return (
     // pressable for card choosing which will call card choosing function
     <View style={styles.container}>
+      <Image source={starry_background} resizeMode="cover" style={styles.containerBackground} />
       <View style={styles.fanContainer}>
         <Pressable onPress={selectCards} style={styles.pressable}>
           <Image source={card_back} style={styles.image} />
@@ -102,7 +104,7 @@ export default function App() {
                 );
               })}
             </View>
-            <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable>
+            {/* <Pressable style={styles.reading} onPress={reading}><Text style={styles.text}>Display Reading</Text></Pressable> */}
           </>
         )}
       </View>
@@ -147,6 +149,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // borderWidth: 1,
     // borderColor: 'red',
+  },
+  containerBackground: {
+    zIndex: -1,
+    position: 'absolute',
+    opacity: .9,
   },
   fanContainer: {
     flex: 1,
