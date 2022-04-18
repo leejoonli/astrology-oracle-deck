@@ -93,6 +93,7 @@ export default function App() {
                 return (
                   <Pressable
                     key={`${cards[index].name}-${index}`}
+                    // change this to show modal
                     onPress={() => { console.log('hello') }}>
                   </Pressable>
                 )
