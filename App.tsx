@@ -184,6 +184,7 @@ const styles = StyleSheet.create({
     height: 250,
   },
   cardName: {
+    fontFamily: 'Papyrus',
     fontSize: 30,
     color: 'white',
     textAlign: 'center',

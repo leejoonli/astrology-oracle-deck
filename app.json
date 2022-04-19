@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "astrology-oracle-deck",
+    "name": "Astrology Oracle Deck",
     "slug": "astrology-oracle-deck",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This application is a simple virtual representation of an astrology oracle deck.",
+    "githubUrl": "https://github.com/leejoonli/astrology-oracle-deck"
   }
 }
