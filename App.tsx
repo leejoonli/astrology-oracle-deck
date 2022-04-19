@@ -116,7 +116,7 @@ export default function App() {
         <>
           <View>
             <Modal
-              animationType='slide'
+              animationType='fade'
               transparent={false}
               onRequestClose={() => {
                 setModal(!modal)
@@ -125,8 +125,8 @@ export default function App() {
               {spread && (
                 <View style={styles.modal}>
                   <Image source={single?.card_face} style={styles.image} />
-                  <Text>{single?.name}</Text>
-                  <Text>{single?.tag}</Text>
+                  <Text style={styles.cardName}>{single?.name}</Text>
+                  <Text style={styles.cardTag}>{single?.tag}</Text>
                   <Text>{single?.meaning}</Text>
                 </View>
               )}
@@ -184,11 +184,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
   },
+  cardName: {
+    fontSize: 35,
+    textAlign: 'center',
+  },
+  cardTag: {
+    fontSize: 20,
+    textAlign: 'center'
+  },
   text: {
     fontSize: 20,
   },
   modal: {
-    padding: 15,
+    padding: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   name: {
     fontSize: 20,
