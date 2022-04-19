@@ -116,7 +116,7 @@ export default function App() {
         <>
           <View>
             <Modal
-              animationType='slide'
+              animationType='fade'
               transparent={false}
               onRequestClose={() => {
                 setModal(!modal)
@@ -124,13 +124,14 @@ export default function App() {
             >
               {spread && (
                 <View style={styles.modal}>
-                  <Image source={single?.card_face} style={styles.image} />
-                  <Text>{single?.name}</Text>
-                  <Text>{single?.tag}</Text>
-                  <Text>{single?.meaning}</Text>
+                  <Image source={starry_background} resizeMode="cover" style={styles.containerBackground} />
+                  <Image source={single?.card_face} style={styles.cardImg} />
+                  <Text style={styles.cardName}>{single?.name}</Text>
+                  <Text style={styles.cardTag}>{single?.tag}</Text>
+                  <Text style={styles.cardText}>{single?.meaning}</Text>
                 </View>
               )}
-              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text>Close Modal</Text></Pressable>
+              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text style={styles.closeText}>Close</Text></Pressable>
             </Modal>
           </View>
         </>
@@ -146,8 +147,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   containerBackground: {
     zIndex: -1,
@@ -156,8 +155,6 @@ const styles = StyleSheet.create({
   },
   fanContainer: {
     flex: 1,
-    // borderWidth: 1,
-    // borderColor: 'red',
     justifyContent: 'center',
     width: 250,
   },
@@ -169,8 +166,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
+    paddingBottom: 80,
     width: 400,
   },
   image: {
@@ -178,17 +174,43 @@ const styles = StyleSheet.create({
     height: 200,
   },
   pressable: {
-    // borderWidth: 1,
-    // borderColor: 'red',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
+    paddingTop: 80,
+  },
+  cardImg: {
+    width: 142.5,
+    height: 250,
+  },
+  cardName: {
+    fontSize: 30,
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  cardTag: {
+    fontSize: 20,
+    color: 'white',
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  cardText: {
+    fontSize: 15,
+    color: 'white',
+    textAlign: 'center',
+    lineHeight: 20,
   },
   text: {
     fontSize: 20,
   },
   modal: {
-    padding: 15,
+    padding: 30,
+    paddingTop: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   name: {
     fontSize: 20,
@@ -203,9 +225,12 @@ const styles = StyleSheet.create({
   },
   closeModal: {
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
     padding: 10,
-    margin: 20,
+    marginLeft: 120,
+    marginRight: 120,
+  },
+  closeText: {
+    fontSize: 20,
+    color: 'white',
   }
 });
