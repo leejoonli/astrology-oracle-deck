@@ -131,7 +131,7 @@ export default function App() {
                   <Text style={styles.cardText}>{single?.meaning}</Text>
                 </View>
               )}
-              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text style={{ color: 'white' }}>Close</Text></Pressable>
+              <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text style={styles.closeText}>Close</Text></Pressable>
             </Modal>
           </View>
         </>
@@ -147,8 +147,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   containerBackground: {
     zIndex: -1,
@@ -157,8 +155,6 @@ const styles = StyleSheet.create({
   },
   fanContainer: {
     flex: 1,
-    // borderWidth: 1,
-    // borderColor: 'red',
     justifyContent: 'center',
     width: 250,
   },
@@ -170,8 +166,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
     paddingBottom: 80,
     width: 400,
   },
@@ -180,8 +174,6 @@ const styles = StyleSheet.create({
     height: 200,
   },
   pressable: {
-    // borderWidth: 1,
-    // borderColor: 'red',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
@@ -195,8 +187,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white',
     textAlign: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
     marginTop: 20,
     marginBottom: 20,
   },
@@ -205,8 +195,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontStyle: 'italic',
     textAlign: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
     marginBottom: 20,
   },
   cardText: {
@@ -214,15 +202,13 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     lineHeight: 20,
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   text: {
     fontSize: 20,
   },
   modal: {
     padding: 30,
-    // paddingTop: 80,
+    paddingTop: 70,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -239,8 +225,12 @@ const styles = StyleSheet.create({
   },
   closeModal: {
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'red',
     padding: 10,
+    marginLeft: 120,
+    marginRight: 120,
+  },
+  closeText: {
+    fontSize: 20,
+    color: 'white',
   }
 });
