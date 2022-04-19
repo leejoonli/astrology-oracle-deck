@@ -124,10 +124,10 @@ export default function App() {
             >
               {spread && (
                 <View style={styles.modal}>
-                  <Image source={single?.card_face} style={styles.image} />
+                  <Image source={single?.card_face} style={[styles.image, styles.cardImg]} />
                   <Text style={styles.cardName}>{single?.name}</Text>
                   <Text style={styles.cardTag}>{single?.tag}</Text>
-                  <Text>{single?.meaning}</Text>
+                  <Text style={styles.cardText}>{single?.meaning}</Text>
                 </View>
               )}
               <Pressable onPress={() => setModal(!modal)} style={styles.closeModal}><Text>Close Modal</Text></Pressable>
@@ -184,20 +184,38 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
   },
+  cardImg: {
+    // borderWidth: 1,
+    // borderColor: 'red',
+  },
   cardName: {
-    fontSize: 27,
+    fontSize: 30,
     textAlign: 'center',
+    // borderWidth: 1,
+    // borderColor: 'red',
+    marginTop: 20,
+    marginBottom: 20,
   },
   cardTag: {
     fontSize: 20,
     fontStyle: 'italic',
     textAlign: 'center',
+    // borderWidth: 1,
+    // borderColor: 'red',
+    marginBottom: 20,
+  },
+  cardText: {
+    fontSize: 15,
+    // borderWidth: 1,
+    // borderColor: 'red',
+    // padding: 20,
   },
   text: {
     fontSize: 20,
   },
   modal: {
-    padding: 50,
+    padding: 30,
+    paddingTop: 80,
     justifyContent: 'center',
     alignItems: 'center',
   },
