@@ -185,12 +185,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   cardName: {
-    fontSize: 35,
+    fontSize: 27,
     textAlign: 'center',
   },
   cardTag: {
     fontSize: 20,
-    textAlign: 'center'
+    fontStyle: 'italic',
+    textAlign: 'center',
   },
   text: {
     fontSize: 20,
